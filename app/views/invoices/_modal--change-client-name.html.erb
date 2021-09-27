@@ -1,0 +1,13 @@
+<div class="modal modal--change-client-name">
+  <div class="modal__header">
+    Change Client Name
+  </div>
+  <%= form_with model: invoice, url: xhr_change_client_name_invoice_path(invoice), class: 'modal__form' do |f| %>
+    <%= f.text_field :client_name, class: 'field field--client-name' %>
+    <div class="error-message error-message--client-name"></div>
+
+    <div class="modal__buttons-container">
+      <button class="p-button">Change</button>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<table class="invoices-table">
+  <thead>
+    <tr>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Client Name
+      </th>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Amount
+      </th>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Tax
+      </th>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Total
+      </th>
+      <th class="invoices-table__header"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'invoice', collection: @invoices  %>
+  </tbody>
+</table>

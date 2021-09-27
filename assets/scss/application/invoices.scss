@@ -1,0 +1,48 @@
+.invoices-table {
+  width: 100%;
+  border-spacing: 0;
+  color: #555;
+  background-color: transparent;
+}
+
+.invoices-table__header {
+  @include sm-md {
+    background-color: rgba(200, 200, 200, 0.1);
+  }
+
+  min-width: 70px;
+  padding: 10px 20px;
+  text-align: left;
+  color: #444;
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #fafbfb;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.invoices-table__item-td {
+  max-width: 300px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #e3e3e3;
+  background: transparent;
+}
+
+.invoices-table__item-td--actions {
+  width: 120px;
+}
+
+.invoice-action {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.invoice-action--edit-name {
+  background-image: url(/img/icons/edit.svg);
+  filter: #0ec0cb;
+}
+.invoice-action--delete {
+  margin-left: 5px;
+  background-image: url(/img/icons/delete.svg);
+}

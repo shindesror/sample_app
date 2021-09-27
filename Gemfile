@@ -7,6 +7,7 @@ gem 'sqlite3', '~> 1.4'
 group :development do
   gem 'listen', '~> 3.3'
   gem 'puma', '~> 5.0'
+  gem 'rubocop', require: false
 end
 
 group :test do

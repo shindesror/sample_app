@@ -2,15 +2,34 @@
 <html>
   <head>
     <title>SampleApp</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag '//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200italic,300,400,600,700,400italic,600italic,700italic',
+      '/assets/css/application.css'
+    %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header header--sticky">
+
+    </header>
+
+    <main class="main">
+      <% flash.each do |type, message| %>
+        <div class="flash flash--<%= type %>">
+          <%= message %>
+        </div>
+      <% end %>
+
+      <%= yield %>
+    </main>
+
+    <%= javascript_include_tag '//code.jquery.com/jquery-3.1.1.min.js',
+      '//cdnjs.cloudflare.com/ajax/libs/jquery-ujs/1.2.2/rails.js',
+      '//cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.min.js',
+      '/assets/js/application.js'
+    %>
   </body>
 </html>

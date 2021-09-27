@@ -1,0 +1,15 @@
+.flash {
+  @include lg {
+    top: 6px;
+  }
+
+  position: relative;
+  margin: 20px auto 25px;
+  padding: 11px 0 12px 20px;
+}
+.flash--alert {
+  background-color: #f7cfcf;
+}
+.flash--notice {
+  background-color: #ecf7cf;
+}
