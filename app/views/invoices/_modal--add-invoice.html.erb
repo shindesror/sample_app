@@ -1,0 +1,31 @@
+<div class="modal modal--add-invoice">
+  <div class="modal__header">
+    Add Invoice
+  </div>
+  <%= form_with model: invoice, url: xhr_add_invoice_invoices_path, class: 'modal__form' do |f| %>
+    <div class="form-group">
+      <label class="control-label">Client Name</label>
+      <div>
+        <%= f.text_field :client_name, class: 'field field--client-name form-control input-lg' %>
+      </div>
+      <div class="error-message error-message--client-name"></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Amount</label>
+      <div>
+        <%= f.text_field :amount, class: 'field field--amount form-control input-lg' %>
+      </div>
+      <div class="error-message error-message--amount"></div>
+    </div>
+    <div class="form-group">
+      <label class="control-label">Tax</label>
+      <div>
+        <%= f.text_field :tax, class: 'field field--tax form-control input-lg' %>
+      </div>
+      <div class="error-message error-message--tax"></div>
+    </div>
+    <div class="modal__buttons-container">
+      <button class="p-button">Add</button>
+    </div>
+  <% end %>
+</div>

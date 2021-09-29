@@ -5,6 +5,23 @@ class InvoicesController < ApplicationController
     @invoices = Invoice.all
   end
 
+  def xhr_add_invoice
+    if request.get?
+      invoice = Invoice.new
+      render partial: 'modal--add-invoice', locals: { invoice: invoice }
+    elsif request.post?
+      invoice = Invoice.new(invoice_params)
+      if invoice.save
+        render json: { invoice: invoice }
+      else
+        render json: {
+          errors: invoice.errors.full_messages,
+          status: 400
+        }
+      end
+    end
+  end
+
   def destroy
     @invoice.destroy!
 
@@ -25,6 +42,10 @@ class InvoicesController < ApplicationController
   end
 
   private
+
+  def invoice_params
+    params.require(:invoice).permit(:amount, :client_name, :tax)
+  end
 
   def find_invoice
     @invoice = Invoice.find params[:id]
