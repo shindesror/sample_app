@@ -67,7 +67,9 @@ function addNewRecord(invoice) {
       total(invoice.tax, invoice.amount) +
       '</td><td class="invoices-table__item-td invoices-table__item-td--actions"><a class="invoice-action invoice-action--edit-name" rel="modal:ajax-open" title="Change name" href="/invoices/' +
       invoice.id +
-      '/xhr_change_client_name"></a><a class="invoice-action invoice-action--delete" title="Delete invoice" rel="nofollow" data-method="delete" href="/invoices/' +
+      '/xhr_change_client_name"></a> <a class="purchase-action purchase-action--add-purchase" rel="modal:ajax-open" title="Add Purchase Order" href="/invoices/' +
+      invoice.id +
+      '/purchase_orders/xhr_add_purchase_order"></a> <a class="invoice-action invoice-action--delete" title="Delete invoice" rel="nofollow" data-method="delete" href="/invoices/' +
       invoice.id +
       '"></a></td></tr>'
   );

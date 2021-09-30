@@ -1,0 +1,12 @@
+<tr class="purchase-table__item-tr" data-id="<%= purchase_order.id %>">
+  <td class="purchase-table__item-td purchase-table__item-td--client-name"><%= purchase_order.client_name %></td>
+  <td class="purchase-table__item-td"><%= number_to_currency purchase_order.amount %></td>
+  <td class="purchase-table__item-td"><%= purchase_order.tax %></td>
+  <td class="purchase-table__item-td"><%= number_to_currency purchase_order.total %></td>
+  <td class="purchase-table__item-td"><%= purchase_order.vendor %></td>
+  <td class="purchase-table__item-td"><%= purchase_order.status %></td>
+  <td class="purchase-table__item-td purchase-table__item-td--actions">
+    <%= link_to '', edit_invoice_purchase_order_path(@invoice, purchase_order), class: 'purchase-action purchase-action--edit-name', title: 'Update Purchase Order' %>
+    <%= link_to '', invoice_purchase_order_path(@invoice, purchase_order), method: :delete, class: 'purchase-action purchase-action--delete', title: 'Delete invoice' %>
+  </td>
+</tr>

@@ -1,0 +1,34 @@
+<%= link_to '', invoices_path, class: 'purchase-action purchase-action--back', title: 'Back To Invoice' %>
+<table class="purchase-table">
+  <thead>
+    <tr>
+      <th class="purchase-table__header purchase-table__header--sortable">
+        Client Name
+      </th>
+      <th class="purchase-table__header purchase-table__header--sortable">
+        Amount
+      </th>
+      <th class="purchase-table__header purchase-table__header--sortable">
+        Tax
+      </th>
+      <th class="purchase-table__header purchase-table__header--sortable">
+        Total
+      </th>
+      <th class="purchase-table__header purchase-table__header--sortable">
+        Vendor
+      </th>
+      <th class="purchase-table__header purchase-table__header--sortable">
+        Status
+      </th>
+      <th class="purchase-table__header"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'purchase_order', collection: @purchase_orders %>
+    <% unless @purchase_orders.present? %>
+      <tr class="purchase-table__item-tr">
+        <td class="purchase-table__item-td text-center" colspan="7">No purchase order available</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

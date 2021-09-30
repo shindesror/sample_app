@@ -109,6 +109,12 @@ a {
   top: 0;
 }
 
+.float-right { float: right; }
+
+.d-ruby-text { display: ruby-text; }
+
+.text-center { text-align: center; }
+
 @import 'application/flash';
 @import 'application/modal';
 @import 'application/controls';

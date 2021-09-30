@@ -24,7 +24,11 @@ gulp.task('app-css', () => {
 });
 
 gulp.task('app-js', () => {
-  const files = ['assets/js/application.js', 'assets/js/application/invoices.js'];
+  const files = [
+    'assets/js/application.js',
+    'assets/js/application/invoices.js',
+    'assets/js/application/purchase_orders.js',
+  ];
   return gulp
     .src(files)
     .pipe(sourcemaps.init())

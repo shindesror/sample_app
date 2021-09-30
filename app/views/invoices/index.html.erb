@@ -1,27 +1,25 @@
-<div class="row" style="float: right;">
+<div class="float-right">
   <%= link_to '', xhr_add_invoice_invoices_path, class: 'invoice-action invoice-action--add-invoice', rel: 'modal:ajax-open', title: 'Add Invoice' %>
 </div>
-<div class="row">
-  <table class="invoices-table">
-    <thead>
-      <tr>
-        <th class="invoices-table__header invoices-table__header--sortable">
-          Client Name
-        </th>
-        <th class="invoices-table__header invoices-table__header--sortable">
-          Amount
-        </th>
-        <th class="invoices-table__header invoices-table__header--sortable">
-          Tax
-        </th>
-        <th class="invoices-table__header invoices-table__header--sortable">
-          Total
-        </th>
-        <th class="invoices-table__header"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render partial: 'invoice', collection: @invoices  %>
-    </tbody>
-  </table>
-</div>
+<table class="invoices-table">
+  <thead>
+    <tr>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Client Name
+      </th>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Amount
+      </th>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Tax
+      </th>
+      <th class="invoices-table__header invoices-table__header--sortable">
+        Total
+      </th>
+      <th class="invoices-table__header"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: 'invoice', collection: @invoices  %>
+  </tbody>
+</table>
